@@ -12,7 +12,7 @@
         "title": "Configuration Guide",
         "icon": "⚙️",
         "links": [
-            {"name": "Configure Database", "url": "configure/configure-database.md"}
+            {"name": "Configure Database", "url": "configure/configure-database"}
         ]
     }
     ],

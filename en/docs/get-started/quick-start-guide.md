@@ -1,7 +1,7 @@
 # Quick Start Guide
 
- WSO2 Integrator: ICP is a fully open-source, interface that enables developers to monitor and manage deployments effortlessly from a unified control plane, simplifying operations and improving efficiency.
-
+WSO2 Integrator: ICP is a fully open-source, interface that enables developers to monitor and manage deployments effortlessly from a unified control plane, simplifying operations and improving efficiency.
+In this quick start guide, you will learn how to download, install, and start using WSO2 Integrator: ICP in a few simple steps.
 
 ## Step 1: Download the Distribution 
 1. Download and unzip [WSO2 Integrator: ICP](https://code.visualstudio.com/download) distribution.
