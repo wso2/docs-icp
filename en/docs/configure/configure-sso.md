@@ -25,9 +25,9 @@ Before configuring SSO on ICP, you need to have:
 2. **Client ID and Client Secret** from your identity provider
 3. **Redirect URI configured** in your identity provider: `https://localhost:3000/auth/callback`
 4. **Required claims** enabled in your identity provider:
-   - `sub` (Subject/User ID) - Required
-   - `email` OR `preferred_username` - Required
-   - `name` - Recommended (for display names)
+    - `sub` (Subject/User ID) - Required
+    - `email` OR `preferred_username` - Required
+    - `name` - Recommended (for display names)
 
 ---
 
