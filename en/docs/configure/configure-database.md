@@ -12,7 +12,7 @@ Before you begin, ensure you have the following:
 
 ## Step 1: Create a MySQL Database
 1. Log in to your MySQL server using the MySQL command-line client or a database management tool.
-2. Execute the script in the `<ICP_HOME/dbscripts/mysql_init.sql` path. This script will create the necessary database and tables required by ICP.
+2. Execute the script in the `<ICP_HOME>/dbscripts/mysql_init.sql` path. This script will create the necessary database and tables required by ICP.
    ```sql
    SOURCE /path/to/ICP_HOME/dbscripts/mysql_init.sql;
    ```
@@ -23,11 +23,11 @@ Before you begin, ensure you have the following:
    ```toml
    [icp_server.storage]
    
-   dbHost = <MYSQL_HOST>
-   dbPort = <MYSQL_PORT>
+   dbHost ="<MYSQL_HOST>"
+   dbPort = "<MYSQL_PORT>"
    dbName = "icp_database"
-   dbUser = <MYSQL_USERNAME>
-   dbPassword = <MYSQL_PASSWORD>
+   dbUser = "<MYSQL_USERNAME>"
+   dbPassword = "<MYSQL_PASSWORD>"
    ```
    Replace `<MYSQL_HOST>`, `<MYSQL_PORT>`, `<MYSQL_USERNAME>`, and `<MYSQL_PASSWORD>` with your MySQL server's host, port, username, and password, respectively.
 3. Save the `deployment.toml` file.
