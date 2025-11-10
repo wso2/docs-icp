@@ -7,6 +7,7 @@ This guide explains how to configure Single Sign-On (SSO) using OpenID Connect (
 ICP supports OIDC-based authentication, allowing users to log in using your organization's existing identity provider. SSO works alongside traditional username/password authentication, giving users the choice of login method.
 
 **Supported Identity Providers:**
+
 - Asgardeo (WSO2)
 - Okta
 - Auth0
@@ -185,6 +186,7 @@ When a user logs in via SSO for the first time:
 ### Display Names
 
 ICP extracts display names from the identity provider using the following priority:
+
 1. `name` claim (full name)
 2. `email` claim (local part before @)
 3. `preferred_username` claim
@@ -192,6 +194,7 @@ ICP extracts display names from the identity provider using the following priori
 ### Username Claim
 
 The `ssoUsernameClaim` parameter determines which claim is used as the username:
+
 - **`email`** (recommended) - Uses the email address
 - **`preferred_username`** - Uses the preferred username
 
@@ -230,6 +233,7 @@ Then reference it in your deployment process.
 ✓ **Redirect URI must match exactly**
 
 The `ssoRedirectUri` in ICP configuration must **exactly match** the redirect URI registered with your identity provider:
+
 - Protocol (https)
 - Domain name
 - Path
@@ -245,6 +249,7 @@ The `ssoRedirectUri` in ICP configuration must **exactly match** the redirect UR
 **Cause**: SSO configuration is disabled or not properly loaded
 
 **Solutions**:
+
 1. Verify `ssoEnabled = true` in `conf/Deployment.toml`
 2. Restart the ICP server after configuration changes
 3. Check server startup logs for configuration validation errors
@@ -254,6 +259,7 @@ The `ssoRedirectUri` in ICP configuration must **exactly match** the redirect UR
 **Cause**: Problem during token exchange with identity provider
 
 **Solutions**:
+
 1. Verify `ssoClientId` and `ssoClientSecret` are correct
 2. Check that the redirect URI in config matches your provider configuration exactly
 3. Ensure your identity provider application is active/enabled
@@ -264,12 +270,15 @@ The `ssoRedirectUri` in ICP configuration must **exactly match** the redirect UR
 **Cause**: Redirect URI doesn't match between ICP and identity provider
 
 **Solutions**:
+
 1. Verify the `ssoRedirectUri` in `conf/Deployment.toml` matches your provider configuration
 2. Check for differences in:
+
    - Protocol (`http` vs `https`)
    - Domain name (exact spelling, subdomains)
    - Port numbers
    - Trailing slashes
+
 3. Update the redirect URI in either ICP config or provider settings to match
 
 ### Missing Required Claims
@@ -277,10 +286,13 @@ The `ssoRedirectUri` in ICP configuration must **exactly match** the redirect UR
 **Cause**: Identity provider not returning required claims
 
 **Solutions**:
+
 1. Check that your identity provider includes these claims in the ID token:
+
    - `sub` (required)
    - `email` or `preferred_username` (required)
    - `name` (recommended)
+
 2. Configure your identity provider to include these claims
 3. Verify the `ssoUsernameClaim` setting matches what your provider returns
 4. Check with your identity provider administrator if claims need to be enabled
