@@ -3,7 +3,16 @@
         "title": "Get Started",
         "icon": "🚀",
         "links": [
-            {"name": "Quick Start Guide", "url": "get-started/quick-start-guide/"}
+            {"name": "Quick Start Guide", "url": "get-started/quick-start-guide/"},
+        ]
+    }
+    ],
+    [    
+    {
+        "title": "Configuration Guide",
+        "icon": "⚙️",
+        "links": [
+            {"name": "Configure Database", "url": "configure/configure-database.md"}
         ]
     }
     ],
