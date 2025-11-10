@@ -12,7 +12,8 @@
         "title": "Configuration Guide",
         "icon": "⚙️",
         "links": [
-            {"name": "Configure Database", "url": "configure/configure-database"}
+            {"name": "Configure Database", "url": "configure/configure-database"},
+            {"name": "Configure Single Sign On (SSO) with an OIDC Provider", "url": "configure/configure-sso"}
         ]
     }
     ],

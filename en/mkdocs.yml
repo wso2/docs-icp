@@ -79,6 +79,7 @@ nav:
               - Quick Start Guide: get-started/quick-start-guide.md
       - Configuration Guide:
               - Configure Database: configure/configure-database.md
+              - Configure SSO: configure/configure-sso.md
 
 # Markdown extensions configuration
 markdown_extensions:
