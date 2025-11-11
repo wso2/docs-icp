@@ -25,6 +25,7 @@ In this quick start guide, you will learn how to download, install, and start us
 ## Step 3: Access the Dashboard
 1. Navigate to `https://localhost:3000/` from browser.
 2. Enter username as `admin` and password as `admin`.
+>**Note:** If you get a "Network Error" when trying to log in, please open [https://localhost:9445/auth](https://localhost:9445/auth) in your browser and trust the certificate.
 3. You should be able redirected to the `Home` page of the ICP console.
 <a href="{{base_path}}/assets/img/get-started/quick-start-guide/home.png"><img src="{{base_path}}/assets/img/get-started/quick-start-guide/home.png" alt="introduction" width="70%"></a>
 
