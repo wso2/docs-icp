@@ -4,6 +4,8 @@
         "icon": "🚀",
         "links": [
             {"name": "Quick Start Guide", "url": "get-started/quick-start-guide/"},
+            {"name": "Create an Integration Project", "url": "get-started/create-project/"},
+            {"name": "Connect Runtime Server to ICP", "url": "get-started/connect-integration/"}
         ]
     }
     ],

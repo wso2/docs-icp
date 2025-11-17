@@ -77,6 +77,8 @@ nav:
       - Home: index.md
       - Get started:
               - Quick Start Guide: get-started/quick-start-guide.md
+              - Create an Integration Project: get-started/create-project.md
+              - Connect Integration Runtimes to WSO2 Integrator: get-started/connect-integration.md
       - Configuration Guide:
               - Configure Database: configure/configure-database.md
               - Configure SSO: configure/configure-sso.md
