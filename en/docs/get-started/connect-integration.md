@@ -25,10 +25,18 @@ Before you begin, ensure you have the following prerequisites:
 <a href="{{base_path}}/assets/img/get-started/connect-integration/integration_details.png"><img src="{{base_path}}/assets/img/get-started/connect-integration/integration_details.png" alt="Integration Details" width="70%"></a>
 5. In the integration details page, click on the **`Configure Runtime`** button located in the relevant environment card (e.g., Development, Production).
 6. Copy the BI runtime configuration snippet provided.
+<a href="{{base_path}}/assets/img/get-started/connect-integration/bi_config_snippet.png"><img src="{{base_path}}/assets/img/get-started/connect-integration/bi_config_snippet.png" alt="BI Config Snippet" width="70%"></a>
 
 ### Step 2: Configure BI Runtime
 1. Open the `Config.toml` file in the BI project. 
-2. Paste the copied configuration snippet into the `Config.toml` file under the appropriate section.
+2. Paste the copied configuration snippet into the `Config.toml` file section.
+```toml
+[anuruddha.wso2.icp]
+integration="my-first-bi-integration"
+project="My ICP Project"
+environment="dev"
+heartbeatInterval=10
+```
 3. Save the `Config.toml` file.
 4. Open the `Ballerina.toml` file in the BI project.
 5. Add the following configuration to the `Ballerina.toml` file:
