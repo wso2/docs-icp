@@ -15,7 +15,6 @@ ICP supports OIDC-based authentication, allowing users to log in using your orga
 - Keycloak
 - Any OIDC-compliant identity provider
 
----
 
 ## Prerequisites
 
@@ -29,7 +28,6 @@ Before configuring SSO on ICP, you need to have:
     - `email` OR `preferred_username` - Required
     - `name` - Recommended (for display names)
 
----
 
 ## Configuration
 
@@ -85,7 +83,6 @@ ssoScopes = ["openid", "email", "profile"]
 | `ssoUsernameClaim` | Claim to use as username: `email` or `preferred_username` | `email` |
 | `ssoScopes` | OIDC scopes to request (minimum: `openid`) | `["openid", "email", "profile"]` |
 
----
 
 ## Provider-Specific Examples
 
@@ -164,7 +161,6 @@ ssoUsernameClaim = "preferred_username"
 ssoScopes = ["openid", "email", "profile"]
 ```
 
----
 
 ## Using SSO
 
@@ -198,7 +194,6 @@ The `ssoUsernameClaim` parameter determines which claim is used as the username:
 
 Choose the option that best matches what your identity provider returns and your organization's needs.
 
----
 
 ## Security Best Practices
 
@@ -236,8 +231,6 @@ The `ssoRedirectUri` in ICP configuration must **exactly match** the redirect UR
 - Path
 - Port (if non-standard)
 - No trailing slash differences
-
----
 
 ## Troubleshooting
 
@@ -299,7 +292,6 @@ The `ssoRedirectUri` in ICP configuration must **exactly match** the redirect UR
 
 **Solution**: Have an administrator assign appropriate roles and permissions to the newly created user account.
 
----
 
 ## FAQ
 
@@ -315,7 +307,6 @@ A: Currently, ICP supports one OIDC provider per deployment.
 **Q: How do I rotate the client secret?**  
 A: Generate a new secret in your identity provider, update `ssoClientSecret` in `conf/Deployment.toml`, and restart the ICP server. Existing user sessions remain valid.
 
----
 
 ## Getting Help
 

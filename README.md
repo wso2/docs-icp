@@ -14,7 +14,7 @@ Follow the below topics to learn more:
 - [Running the project locally](#run-locally)
 - [Signing the CLA](#cla)
 
-## <a name="contribute"></a> Contributing to BI documentation
+## <a name="contribute"></a> Contributing to ICP documentation
 
 As an open-source project, WSO2 Integrator: ICP documentation welcomes contributions from the community. Before you contribute, read the following guidelines to understand how you can contribute:
 
@@ -183,7 +183,7 @@ Navigate to the location where you want to clone the repository and clone the fo
     >```
 >
 
-2. Open the following URL on a new browser window to view the Micro Integrator documentation site locally:
+2. Open the following URL on a new browser window to view the WSO2 Integrator: ICP documentation site locally:
 
    http://localhost:8000
 
