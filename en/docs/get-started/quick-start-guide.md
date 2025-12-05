@@ -15,7 +15,7 @@ Before you begin, ensure that you have the following prerequisites installed and
 - **Network**: Internet connection for downloading the distribution
 
 ## Step 1: Download the Distribution 
-1. Download and unzip [WSO2 Integrator: ICP](https://github.com/wso2/integration-control-plane/releases/download/v2.0.0-M1/wso2-integrator-icp-2.0.0-SNAPSHOT.zip) distribution.
+1. Download and unzip [WSO2 Integrator: ICP](https://github.com/wso2/integration-control-plane/releases/download/v2.0.0-M4/wso2-integrator-icp-2.0.0-SNAPSHOT.zip) distribution.
 
 
 ## Step 2: Start the ICP server
