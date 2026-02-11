@@ -82,6 +82,7 @@ nav:
         - Configuration Guide:
                   - Configure Database: configure/configure-database.md
                   - Configure SSO: configure/configure-sso.md
+                  - Configure ICP to Monitor MI Logs: configure/configure-mi-logs.md
 
 # Markdown extensions configuration
 markdown_extensions:
