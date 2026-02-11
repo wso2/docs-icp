@@ -16,7 +16,7 @@
         "links": [
             {"name": "Configure Database", "url": "configure/configure-database"},
             {"name": "Configure Single Sign On (SSO) with an OIDC Provider", "url": "configure/configure-sso"},
-             {"name": "Configure ICP to Monitor MI Logs", "url": "configure/configure-mi-logs"},
+            {"name": "Configure ICP to Monitor MI Logs", "url": "configure/configure-mi-logs"},
         ]
     }
     ],
