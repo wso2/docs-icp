@@ -26,7 +26,7 @@ Before you begin, ensure you have the following prerequisites:
     ```
     {% endraw %}
 
-    - Remove the `appender.CARBON_LOGFILE.filePattern` config and change the `filePattern` config. This change is required to make sure Fluent Bit correctly detects daily rolling file updates.
+    - Remove the `appender.CARBON_LOGFILE.fileName` config and change the `filePattern` config. This change is required to make sure Fluent Bit correctly detects daily rolling file updates.
 
     {% raw %}
     ```properties
@@ -43,9 +43,9 @@ Before you begin, ensure you have the following prerequisites:
     {% endraw %}
 
 
-These changes will,
+These changes will:
 
-- Change the timestamp format to the ICP supported format.
+- Change the timestamp format to the ICP-supported format.
 - Log the artifact container where applicable.
 - Append the runtime id to the log.
 - Change the rollover strategy and the file pattern to allow Fluent Bit to detect new log files created daily.
@@ -148,7 +148,7 @@ services:
       - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=false"
     env_file:
     # For any environmental variables
-      - /path/to/.env
+      - path/to/.env
     volumes:
     # For any dashboard configurations
       - path/to/opensearch_dashboards.yml:/usr/share/opensearch-dashboards/config/opensearch_dashboards.yml
@@ -426,9 +426,9 @@ docker compose -f docker-compose.yml logs fluent-bit | grep "inotify_fs_add"
 curl -ku admin:<password> https://localhost:9200/_cat/indices/mi-application-logs-*
 ```
 
-or log into the Opensearch dashboards UI from [http://localhost:5601/](http://localhost:5601/) and follow the below path to check if the index exists:
+or log into the OpenSearch dashboards UI from [http://localhost:5601/](http://localhost:5601/) and follow the below path to check if the index exists:
 
-```
+```text
 Management -> Index Management -> Indexes
 ```
 
@@ -469,7 +469,7 @@ curl http://localhost:2020/api/v1/metrics
 
 If you see `cannot increase buffer` warnings, the `Buffer_Size` may need to be increased
 
-- Check if Index template is correcly applied
+- Check if Index template is correctly applied
 
 If fields have wrong types assigned, delete existing indices and let them be recreated:
 ```bash
