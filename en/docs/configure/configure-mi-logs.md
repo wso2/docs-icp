@@ -214,7 +214,6 @@ services:
       "
 volumes:
   opensearch_data:
-  data_prepper_config:
   fluent-bit-db:
   # Size constrained by Fluent Bit storage.total_limit_size in fluent-bit.conf
   fluent-bit-buffer:
@@ -447,7 +446,7 @@ curl -X POST 'https://localhost:9200/mi-application-logs-*/_search' \
 
 ## Viewing MI logs on ICP
 
-Once the Fluent Bit and Opensearch has been properly set up, you can navigate to the logs tab of an ICP project or integration to see the published logs.
+Once the Fluent Bit and OpenSearch has been properly set up, you can navigate to the logs tab of an ICP project or integration to see the published logs.
 
 <a href="{{base_path}}/assets/img/configure/mi-logs/icp_mi_logs_view.png"><img src="{{base_path}}/assets/img/configure/mi-logs/icp_mi_logs_view.png" alt="MI logs in ICP" width="70%"></a>
 
