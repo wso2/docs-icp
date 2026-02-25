@@ -50,36 +50,37 @@ These changes will:
 - Append the runtime id to the log.
 - Change the rollover strategy and the file pattern to allow Fluent Bit to detect new log files created daily.
 
-Optionally, if you want to keep the default configurations of the `CARBON_LOGFILE` appender as is or if there is a requirement to have the log file duplicated in a different location, you can add a new appender identical to the `CARBON_LOGFILE` in the `log4j2.properties` file.
+!!! note
+    Optionally, if you want to keep the default configurations of the `CARBON_LOGFILE` appender as is or if there is a requirement to have the log file duplicated in a different location, you can add a new appender identical to the `CARBON_LOGFILE` in the `log4j2.properties` file.
 
-{% raw %}
-```properties
-# Add the new appender to the list of appenders
-appenders = CARBON_CONSOLE, CARBON_LOGFILE, MI_CARBON_LOGFILE,...
+    {% raw %}
+    ```properties
+    # Add the new appender to the list of appenders
+    appenders = CARBON_CONSOLE, CARBON_LOGFILE, MI_CARBON_LOGFILE,...
 
-# Configure the new MI_CARBON_LOGFILE appender
-appender.MI_CARBON_LOGFILE.type = RollingFile
-appender.MI_CARBON_LOGFILE.name = MI_CARBON_LOGFILE
-appender.MI_CARBON_LOGFILE.filePattern = <path/to>/wso2carbon-%d{MM-dd-yyyy}-%i.log
-appender.MI_CARBON_LOGFILE.layout.type = PatternLayout
-appender.MI_CARBON_LOGFILE.layout.pattern = [%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] %5p {%c} %X{Artifact-Container} - %m%ex ${sys:icp.runtime.log.suffix:-}%n
-appender.MI_CARBON_LOGFILE.policies.type = Policies
-appender.MI_CARBON_LOGFILE.policies.time.type = TimeBasedTriggeringPolicy
-appender.MI_CARBON_LOGFILE.policies.time.interval = 1
-appender.MI_CARBON_LOGFILE.policies.time.modulate = true
-appender.MI_CARBON_LOGFILE.policies.size.type = SizeBasedTriggeringPolicy
-appender.MI_CARBON_LOGFILE.policies.size.size=10MB
-appender.MI_CARBON_LOGFILE.strategy.type = DirectWriteRolloverStrategy
-appender.MI_CARBON_LOGFILE.filter.threshold.type = ThresholdFilter
-appender.MI_CARBON_LOGFILE.filter.threshold.level = DEBUG
+    # Configure the new MI_CARBON_LOGFILE appender
+    appender.MI_CARBON_LOGFILE.type = RollingFile
+    appender.MI_CARBON_LOGFILE.name = MI_CARBON_LOGFILE
+    appender.MI_CARBON_LOGFILE.filePattern = <path/to>/wso2carbon-%d{MM-dd-yyyy}-%i.log
+    appender.MI_CARBON_LOGFILE.layout.type = PatternLayout
+    appender.MI_CARBON_LOGFILE.layout.pattern = [%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] %5p {%c} %X{Artifact-Container} - %m%ex ${sys:icp.runtime.log.suffix:-}%n
+    appender.MI_CARBON_LOGFILE.policies.type = Policies
+    appender.MI_CARBON_LOGFILE.policies.time.type = TimeBasedTriggeringPolicy
+    appender.MI_CARBON_LOGFILE.policies.time.interval = 1
+    appender.MI_CARBON_LOGFILE.policies.time.modulate = true
+    appender.MI_CARBON_LOGFILE.policies.size.type = SizeBasedTriggeringPolicy
+    appender.MI_CARBON_LOGFILE.policies.size.size=10MB
+    appender.MI_CARBON_LOGFILE.strategy.type = DirectWriteRolloverStrategy
+    appender.MI_CARBON_LOGFILE.filter.threshold.type = ThresholdFilter
+    appender.MI_CARBON_LOGFILE.filter.threshold.level = DEBUG
 
-# Add an entry in the root loggers
-rootLogger.level = INFO
-rootLogger.appenderRef.CARBON_LOGFILE.ref = CARBON_LOGFILE
-rootLogger.appenderRef.MI_CARBON_LOGFILE.ref = MI_CARBON_LOGFILE
-...
-```
-{% endraw %}
+    # Add an entry in the root loggers
+    rootLogger.level = INFO
+    rootLogger.appenderRef.CARBON_LOGFILE.ref = CARBON_LOGFILE
+    rootLogger.appenderRef.MI_CARBON_LOGFILE.ref = MI_CARBON_LOGFILE
+    ...
+    ```
+    {% endraw %}
 
 ### Step 2: Configure Fluent Bit and OpenSearch
 
@@ -416,7 +417,7 @@ docker compose -f path/to/docker-compose.yml down
 **1. Check Fluent Bit is watching MI logs**
 
 ```bash
-docker compose -f docker-compose.yml logs fluent-bit | grep "inotify_fs_add"
+docker compose -f path/to/docker-compose.yml logs fluent-bit | grep "inotify_fs_add"
 ```
 
 **2. Check OpenSearch index exists**
@@ -455,7 +456,7 @@ Once the Fluent Bit and OpenSearch has been properly set up, you can navigate to
 - Check Fluent Bit logs for errors:
 
 ```bash
-docker compose -f docker-compose.observability.yml logs fluent-bit
+docker compose -f path/to/docker-compose.yml logs fluent-bit
 ```
 
 - Make sure Fluent Bit is reading logs
